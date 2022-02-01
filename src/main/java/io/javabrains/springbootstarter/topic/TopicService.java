@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class TopicService {
 
-    private List<Topic> topics = Arrays.asList(//si asta de merge? ca nu e in metoda
+    private List<Topic> topics = Arrays.asList(
             new Topic("spring", "Spring Framework", "Spring Framework Description"),
             new Topic("java", "Core Java", "Core Java Description"),
             new Topic("javascript", "JavaScript", "JavaScript Description"));
