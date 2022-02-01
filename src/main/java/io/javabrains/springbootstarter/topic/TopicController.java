@@ -12,12 +12,14 @@ public class TopicController {
     @Autowired
     private TopicService topicService;
 
-    @GetMapping("/topics")
+    @RequestMapping ("/topics")
     public List<Topic> getAllTopics(){
       return topicService.getAllTopics();
     }
-    @PostMapping("/topics")
-    public void addTopic(@RequestBody Topic topic){
-        topicService.addTopic(topic);
+
+    @RequestMapping("/topics/{id}")
+    public Topic getTopic(String id){
+        return topicService.getTopic(id);
     }
+
 }
