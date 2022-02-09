@@ -9,22 +9,22 @@ import java.util.List;
 public class TopicController {
 
     @Autowired
-    private Service topicService;
+    private Service topicService_1;
 
     @Autowired
-    private Service topicService2;
+    private Service topicService_2;
 
     @RequestMapping("/topics")
     public List<Topic> getAllTopics(){
-      return topicService.getAllTopics();
+      return topicService_1.getAllTopics();
     }
     @RequestMapping("/topic2")
     public List<Topic> getAllTopics2(){
-        return topicService2.getAllTopics();
+        return topicService_2.getAllTopics();
     }
     @PostMapping("/topicsp")
     public void addTopic(@RequestBody Topic topic){
-        topicService.addTopic(topic);
+        topicService_1.addTopic(topic);
     }
 
 
