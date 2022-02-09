@@ -1,6 +1,7 @@
 package io.javabrains.springbootstarter.topicController;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,9 +9,11 @@ import java.util.List;
 @RestController
 public class TopicController {
 
+    @Qualifier("topicService")
     @Autowired
     private Service topicService_1;
 
+    @Qualifier("topicService2")
     @Autowired
     private Service topicService_2;
 
