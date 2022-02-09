@@ -1,23 +1,32 @@
-package io.javabrains.springbootstarter.topic;
+package io.javabrains.springbootstarter.topicController;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class TopicController {
 
     @Autowired
-    private TopicService topicService;
+    private Service topicService;
 
-    @GetMapping("/topics")
+    @Autowired
+    private Service topicService2;
+
+    @RequestMapping("/topics")
     public List<Topic> getAllTopics(){
       return topicService.getAllTopics();
     }
-    @PostMapping("/topics")
+    @RequestMapping("/topic2")
+    public List<Topic> getAllTopics2(){
+        return topicService2.getAllTopics();
+    }
+    @PostMapping("/topicsp")
     public void addTopic(@RequestBody Topic topic){
         topicService.addTopic(topic);
     }
+
+
+
 }
